@@ -1,19 +1,15 @@
 ﻿using System;
-namespace CreatingAMovieAPI.Models
-{	public enum Genre
-    {
-		Horror,
-		Comedy,
-		Action,
-		Animated,
-		Romance
+using System.Collections.Generic;
 
-    }
-	public class Movie
-	{
-		public string Title { get; set; }
-        public int ReleaseYear { get; set; }
-		public Genre Genre { get; set; }
+namespace CreatingAMovieAPI.models
+{
+    public partial class Movie
+    {
+        public int Id { get; set; }
+        public string? Title { get; set; }
+        public int? ReleaseYear { get; set; }
+        public int? Genre { get; set; }
+
+        public virtual Genre? GenreNavigation { get; set; }
     }
 }
-
